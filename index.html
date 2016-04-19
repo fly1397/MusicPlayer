@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html ng-app="audioPlayer">
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>AUDPlay</title>
+    <link rel="stylesheet" href="css/player.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/player.js"></script>
+</head>
+<body>
+<div class="bgContainer">
+    <img src="images/bg3.jpg">
+    <video id="audiobg" autoplay loop>
+        <source src="images/rain.mp4" type="video/mp4">
+    </video>
+</div>
+<div class="searchPage" ng-controller="playerController">
+    <div class="header">
+        <div id="searchBar" class="search">
+            <div class="inner">
+                <input type="text" class="searchBox"  value="" placeholder="搜索歌名或歌手" maxlength="20" ng-model="keyword">
+                <audio id="audio" controls></audio>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div id="pageTitle">
+            <div class="searchTitle">
+                <a class="btnBack" title="返回">返回</a> <span class="title">{{keyword?keyword:'黄家驹'}} 搜索结果</span>
+            </div>
+        </div>
+        <div id="aside">
+            <div class="player">
+                <div class="message">
+                    <h2 id="p_songName" class="song">{{player.current.song.song_name}}</h2>
+                    <span id="p_singerName" class="singer" title="{{player.current.song.album_name}}">{{player.current.song.singer_name}}</span>
+                </div>
+                <div class="picTools">
+                    <div class="wrap">
+                        <div class="album"></div>
+                        <div class="dvd {{player.playing?'playCD':'' }}"></div>
+                        <img ng-src="{{player.current.song.pic}}" title="{{player.current.song.singer_name}}">
+                    </div>
+                    <div class="handle">
+                        <a id="heart" class="{{player.current.song.like==true?'redHeart':'heart'}}" title="收藏" ng-click="player.fav()"></a>
+                        <a id="p_download" class="download" title="下载" ng-href="{{player.current.song.url_list[0].url}}" target="_blank"></a>
+                        <a id="p_mode" class="repeat" title="列表循环"></a>
+                        <div id="J_shareWrap" class="shareWrap fix">
+                            <a class="share" title="分享"></a>
+                        </div>
+                        <a id="p_mute" class="{{player.volume == 0 ?'mute':'horn'}}" title="静音" ng-click="player.mutes()">
+                            <span id="p_volume" title="音量">
+                                <span class="volumeBg">
+                                    <span>
+                                        <span class="volumeFg" id="volume_num" style="width: {{player.volume * 100}}%;">
+                                            <span id="volume_bar"></span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="lyrics" ng-controller="lrcController">
+                    <div id="lyricArea">
+                        <ul class="normal transitionTop" id="lyricContainer">
+                            <li ng-repeat="l in lrc" data-time="{{ l[0] }}" id="line-{{$index}}">{{ l[1] }}</li>
+                        </ul>
+                    </div>
+                    <p ng-show="lrc_ready">搜索歌词中...</p>
+                    <div class="foo">
+                        <a class="lyricSearchBtn" title="歌词搜索" href="javascript:void(0);"></a> <a class="lyricTimeUp" title="歌词延后0.5秒" href="javascript:void(0);"></a> <a class="lyricTimeReset" title="歌词重置" href="javascript:void(0);"></a> <a class="lyricTimeDown" title="歌词提前0.5秒" href="javascript:void(0);"></a> <a id="p_kokSwitch" class="kokOn" title="卡拉ok歌词" href="javascript:void(0);"></a> <a class="lyricErrorTip" title="歌词报错" href="javascript:void(0);"></a> </div>
+                </div>
+                <div class="bottomWrap">
+                    <div class="progress" id="progressBar">
+                        <p class="progressTip {{player.readys}}">正在缓冲中...</p>
+                        <span id="bufferBar" class="buffer" style="width:{{player.buffer}}%;"> <span></span> </span>
+                        <span id="currTimeBar" class="reach" style="width:{{player.progress_percent * 100}}%"> <span> <span id="cursor" class="cursor"></span> </span> </span>
+                        <span id="currTime" class="partTime">{{player.progress}}</span>
+                        <span id="totalTime" class="allTime">{{player.duration}}</span>
+                    </div>
+                    <div class="playWrap">
+                        <a id="p_pre" class="{{player.current.index=='0'?'preDisabled':'forward'}}" title="上一首(Ctrl + ←)" ng-click="player.playPre()"></a>
+                        <a id="p_play" class="play" title="播放(空格)" ng-click="player.play()" ng-show="!player.playing"></a>
+                        <a class="pause" title="暂停(空格)" ng-click="player.stop()" ng-show="player.playing"></a>
+                        <a id="p_next" class="{{player.current.index==player.list.length-1?'nextDisabled':'back'}}" title="下一首(Ctrl + →)" ng-click="player.playNext()"></a>
+                        <a id="btnListNew" class="listNew" ng-click="player.showViewed()"></a>
+                    </div>
+                </div>
+            </div>
+            <div style="display: none;" id="listNew" ng-controller="viewedController">
+                <div class="menu">
+                    <a class="tempList active"><span class="state"></span>播放列表</a>
+                    <!--<a class="redList"> <span class="state"></span>红心列表</a>-->
+                    <a class="close" ng-click="player.showViewed()"></a>
+                </div>
+                <div class="list">
+                    <ul id="tempListContent" style="display: block;">
+                        <li ng-repeat="n in viewed.list | filter :{viewed:true}" class="J_songItem {{n.song_id==player.current.song.song_id?player.current.class:''}}"  ng-click="player.play(n,$index)">
+                            <a href="javascript:;" class="fix">
+                                <span class="checkbox"></span>
+                                <span class="group fix">
+                                    <span class="num" data-index="{{$index}}"></span>
+                                    <span class="song text-overflow" title="{{n.song_name}}">{{n.song_name}}</span>
+                                </span>
+                                <span class="singer text-overflow" title="{{n.singer_name}}">{{n.singer_name}}</span>
+                                <span class="delete" ng-click="player.reView($index,$event)"></span>
+                                <span data-songid="{{n.song_id}}" class="{{n.like==true?'redHeart':'heart'}}" ng-click="player.fav($index,$event)"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--<ul id="redListContent" style="display: none;">-->
+                        <!--<div class="empty">-->
+                            <!--<p class="text">你收藏的歌曲将在这里显示</p>-->
+                            <!--<p><a href="javascript:;" class="dr J-login">马上登陆</a>或<a href="javascript:;" class="zc J-register">注册</a></p>-->
+                        <!--</div>-->
+                    <!--</ul>-->
+                </div>
+                <div class="tempListTip"></div>
+                <div id="tempListFooter" class="toolsBar" style="display: block;">
+                    <div class="inner">
+                        <a class="toolCkeckAll" href="javascript:;">全选</a>
+                        <!--<a class="toolAddItem disabled" href="javascript:;">收藏</a>-->
+                        <a class="toolDelItem disabled" href="javascript:;">删除</a>
+                        <div class="numWrap">共有 <span>4</span>首</div>
+                    </div>
+                </div>
+                <!--<div id="redListFooter" class="toolsBar" style="display: none;">-->
+                    <!--<div class="inner"> <div class="numWrap">共有 <span>0</span>首</div> </div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div id="main">
+            <div id="searchlistPanel">
+                <div class="appPanel">
+                    <div class="searchPage">
+                        <ul class="commonList fix">
+                            <li ng-repeat="song in songs" class="J_songItem {{song.song_id==player.current.song.song_id?player.current.class:''}}" data-index="{{$index}}" ng-click="player.play(song,$index)">
+                                <a class="fix">
+                                    <span class="status"></span>
+                                    <span class="group">
+                                        <span class="song text-overflow" title="{{ song.song_name}}">{{ song.song_name}}</span>
+                                        <span class="singer text-overflow" title="{{ song.singer_name}}">{{ song.singer_name}}</span>
+                                        <span class="heartNum">{{song.pick_count}}</span>
+                                    </span>
+                                    <!--<span data-songid="{{ngModel.song_id}}" class="add"></span>-->
+                                    <span class="showview {{song.like==true?'redHeart':'heart'}}" data-songid="{{song.song_id}}" ng-click="player.fav($index,$event)"></span>
+                                    <span class="download" title="{{song.url_list[0].url}}"></span>
+                                </a>
+                                <!--<p data-song-link ng-click="player.play(song,$index)"  ng-model="song"></p>-->
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

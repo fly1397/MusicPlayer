@@ -1,0 +1,760 @@
+@charset "UTF-8";
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
+html, body {
+  font: 16px/1.5em "Microsoft YaHei";
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button {
+  display: none; }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+  background: -webkit-gradient(linear, left);
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-width: 0 3px;
+  border-style: solid;
+  border-color: #fefefe;
+  border-radius: 6px;
+  background: #d9d9d9; }
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-width: 3px 0;
+  border-style: solid;
+  border-color: #fefefe;
+  border-radius: 5px;
+  background: #d9d9d9; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd; }
+
+::-webkit-scrollbar-thumb:active {
+  background: #8e8e8e; }
+
+.bgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0; }
+  .bgContainer img {
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    opacity: 0; }
+  .bgContainer video {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute; }
+
+.searchPage {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+.header {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  font: 12px/40px "宋体";
+  background: url(../images/headBG.png) repeat-x left top; }
+  .header .search audio {
+    display: none; }
+  .header .search input {
+    display: block;
+    border: 0;
+    background: none;
+    height: 40px;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #fff; }
+
+.content {
+  z-index: 5;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+#pageTitle {
+  z-index: 2;
+  position: absolute;
+  left: 333px;
+  top: 0;
+  right: 0; }
+  #pageTitle .searchTitle {
+    float: left;
+    height: 32px;
+    padding: 22px;
+    font: 400 24px/32px;
+    white-space: nowrap; }
+    #pageTitle .searchTitle .btnBack {
+      margin-left: 20px;
+      float: left;
+      width: 32px;
+      height: 32px;
+      margin-right: 8px;
+      overflow: hidden;
+      text-indent: 100%;
+      background: url(../images/iconMain.png) no-repeat 0 -400px; }
+
+#aside {
+  z-index: 3;
+  position: absolute;
+  width: 338px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: url(../images/bgLeft.png) repeat-y top left; }
+  #aside .player .message {
+    display: block;
+    padding: 0 15px;
+    margin: 15px 8px 15px 0;
+    line-height: 1.8em;
+    text-align: center;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-user-select: auto;
+    -khtml-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto; }
+  #aside .player .song, #aside .player .singer {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden; }
+  #aside .player .song {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 400; }
+  #aside .player .picTools {
+    z-index: 3;
+    position: relative;
+    margin-right: 8px; }
+  #aside .player .wrap {
+    position: relative;
+    width: 191px;
+    height: 186px;
+    margin: 0 auto; }
+    #aside .player .wrap span {
+      z-index: 101; }
+  #aside .player .wrap span, #aside .player img {
+    position: absolute;
+    top: 4px;
+    left: 5px;
+    width: 176px;
+    height: 176px; }
+  #aside .player img {
+    z-index: 100;
+    background: url("../images/music.jpeg") no-repeat left center;
+    background-size: auto 100%; }
+  #aside .player .album {
+    z-index: 101;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 191px;
+    height: 186px;
+    background: url(../images/iconPlay.png) no-repeat 0 -850px; }
+  #aside .player .dvd {
+    z-index: 99;
+    position: absolute;
+    top: 4px;
+    left: 8px;
+    width: 170px;
+    height: 170px;
+    background: url(../images/iconPlay.png) no-repeat 1px -1200px;
+    -webkit-transition: left .5s;
+    -moz-transition: left .5s;
+    -o-transition: left .5s;
+    -ms-transition: left .5s; }
+  #aside .player .playCD {
+    left: 60px;
+    -webkit-animation-name: rotate;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear; }
+  #aside .player .handle {
+    position: relative;
+    width: 273px;
+    height: 20px;
+    padding: 12px 19px 21px 38px;
+    background: url(../images/lyric.png) repeat-x left bottom; }
+    #aside .player .handle #p_mute span {
+      display: block; }
+    #aside .player .handle #p_mute > span {
+      visibility: hidden;
+      width: 60px;
+      height: 5px;
+      padding: 10px 0 10px 0;
+      margin: -5px 0 0 24px; }
+    #aside .player .handle #p_mute:hover > span, #aside .player .handle #p_mute > .showVolume {
+      visibility: visible; }
+    #aside .player .handle #p_mute .volumeBg, #aside .player .handle #p_mute .volumeFg, #aside .player .handle #p_mute .volumeBg > span {
+      height: 100%;
+      cursor: pointer; }
+    #aside .player .handle #p_mute .volumeBg {
+      width: 60px;
+      background: url(../images/iconPlay.png) no-repeat 0 -200px; }
+      #aside .player .handle #p_mute .volumeBg > span {
+        width: 50px; }
+    #aside .player .handle #p_mute .volumeFg {
+      width: 100%;
+      position: relative;
+      background: url(../images/iconPlay.png) no-repeat -100px -200px; }
+      #aside .player .handle #p_mute .volumeFg span {
+        width: 12px;
+        height: 12px;
+        padding: 5px;
+        position: absolute;
+        top: -9px;
+        right: -18px;
+        background: url(../images/iconPlay.png) no-repeat -198px -200px; }
+        #aside .player .handle #p_mute .volumeFg span:hover {
+          background: url(../images/iconPlay.png) no-repeat -252px -200px; }
+    #aside .player .handle a {
+      float: left;
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-left: 25px;
+      cursor: pointer; }
+    #aside .player .handle .heart {
+      background: url(../images/iconPlay.png) no-repeat -200px -50px; }
+      #aside .player .handle .heart:hover {
+        background-position: -250px -50px; }
+    #aside .player .handle .redHeart {
+      background: url(../images/iconList.png) no-repeat 0 -250px; }
+    #aside .player .handle .download {
+      background: url(../images/iconPlay.png) no-repeat -97px -150px; }
+      #aside .player .handle .download:hover {
+        background-position: -147px -150px; }
+    #aside .player .handle .repeat {
+      background: url(../images/iconPlay.png) no-repeat 0 -100px; }
+      #aside .player .handle .repeat:hover {
+        background-position: -50px -100px; }
+    #aside .player .handle .shareWrap {
+      float: left;
+      margin-left: 25px;
+      width: 20px;
+      height: 24px; }
+    #aside .player .handle .share {
+      margin-left: 0;
+      background: url(../images/iconPlay.png) no-repeat -100px -50px; }
+      #aside .player .handle .share:hover {
+        background-position: -150px -50px; }
+    #aside .player .handle .horn {
+      background: url(../images/iconPlay.png) no-repeat -200px 0; }
+      #aside .player .handle .horn:hover {
+        background-position: -250px 0; }
+    #aside .player .handle .mute {
+      background: url(../images/iconPlay.png) no-repeat 0 -50px; }
+      #aside .player .handle .mute:hover {
+        background-position: -50px -50px; }
+    #aside .player .handle #p_mute {
+      width: 25px; }
+  #aside .player .lyrics {
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    bottom: 97px;
+    width: 330px;
+    height: 280px;
+    line-height: 1.8em;
+    overflow: hidden;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer; }
+    #aside .player .lyrics #lyricArea {
+      position: relative; }
+    #aside .player .lyrics ul {
+      position: absolute;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      top: 150px;
+      width: 100%; }
+      #aside .player .lyrics ul li {
+        height: 28px;
+        line-height: 28px;
+        font-size: 14px;
+        transition: all .5s;
+        -webkit-transition: all .5s;
+        -moz-transition: all .5s;
+        -o-transition: all .5s;
+        text-align: center;
+        color: #c6b7b7; }
+        #aside .player .lyrics ul li span {
+          display: inline-block; }
+        #aside .player .lyrics ul li.current-line {
+          font-size: 16px;
+          color: #fff; }
+    #aside .player .lyrics .transitionTop {
+      transition: top .5s;
+      -webkit-transition: top .5s;
+      -moz-transition: top .5s;
+      -o-transition: top .5s; }
+    #aside .player .lyrics > p {
+      display: none;
+      text-align: center;
+      color: #fff; }
+  #aside .player .bottomWrap {
+    position: absolute;
+    bottom: 0;
+    width: 330px;
+    height: 90px;
+    background: url(../images/playBottom.png) repeat-x left top;
+    z-index: 200; }
+  #aside .player .progress {
+    width: 330px;
+    height: 2px;
+    margin-top: 1px;
+    background: #fff;
+    filter: alpha(opacity=10);
+    background: rgba(255, 255, 255, 0.1);
+    cursor: pointer; }
+    #aside .player .progress .progressTip {
+      display: none;
+      width: 100%;
+      margin: 0;
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      left: 0;
+      top: -30px;
+      font-size: 14px;
+      color: #a0a0a0;
+      text-align: center;
+      text-shadow: 0 0 2px #000;
+      background: #000 \9;
+      filter: alpha(opacity=30);
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 999; }
+    #aside .player .progress span {
+      display: block; }
+    #aside .player .progress .buffer, #aside .player .progress .reach {
+      position: absolute;
+      top: -6px;
+      left: 0;
+      height: 2px;
+      padding: 7px 0; }
+      #aside .player .progress .buffer span, #aside .player .progress .reach span {
+        width: 100%;
+        height: 100%;
+        background: #26C4F1;
+        filter: alpha(opacity=50);
+        background: rgba(38, 196, 241, 0.5); }
+    #aside .player .progress .reach {
+      max-width: 320px; }
+      #aside .player .progress .reach span {
+        position: relative;
+        background: #fff; }
+        #aside .player .progress .reach span .cursor {
+          display: block;
+          position: absolute;
+          top: -10px;
+          right: -17px;
+          width: 16px;
+          height: 16px;
+          padding: 5px 3px;
+          background: url(../images/iconPlay.png) no-repeat -198px -200px;
+          z-index: 1000; }
+  #aside .player .partTime, #aside .player .allTime {
+    display: block;
+    position: absolute;
+    top: 6px;
+    font-size: 12px;
+    height: 20px;
+    line-height: 20px;
+    left: 2px;
+    color: #fff; }
+  #aside .player .allTime {
+    left: inherit;
+    right: 2px;
+    color: rgba(255, 255, 255, 0.3);
+    filter: alpha(opacity=30); }
+  #aside .player .playWrap {
+    height: 66px;
+    margin: 20px 0 10px 18px; }
+    #aside .player .playWrap a {
+      display: block;
+      float: left;
+      width: 25%;
+      height: 60px; }
+    #aside .player .playWrap .forward {
+      background: url(../images/iconPlay.png) no-repeat 0 -244px; }
+      #aside .player .playWrap .forward:hover {
+        background-position: -100px -244px; }
+    #aside .player .playWrap .preDisabled {
+      cursor: default;
+      background: url(../images/iconPlay.png) no-repeat 0 -744px; }
+    #aside .player .playWrap .play {
+      background: url(../images/iconPlay.png) no-repeat 2px -448px; }
+      #aside .player .playWrap .play:hover {
+        background-position: -98px -448px; }
+    #aside .player .playWrap .pause {
+      background: url(../images/iconPlay.png) no-repeat 2px -548px; }
+      #aside .player .playWrap .pause:hover {
+        background-position: -98px -548px; }
+    #aside .player .playWrap .back {
+      background: url(../images/iconPlay.png) no-repeat 15px -344px; }
+      #aside .player .playWrap .back:hover {
+        background-position: -85px -344px; }
+    #aside .player .playWrap .nextDisabled {
+      cursor: default;
+      background: url(../images/iconPlay.png) no-repeat -85px -744px; }
+    #aside .player .playWrap .listNew {
+      background: url(../images/iconPlay.png) no-repeat 25px -633px; }
+      #aside .player .playWrap .listNew:hover {
+        background-position: -75px -633px; }
+
+#main {
+  z-index: 1;
+  position: absolute;
+  left: 333px;
+  top: 65px;
+  right: 5px;
+  bottom: 30px;
+  padding-left: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url(../images/mainBG.png) repeat top left; }
+  #main .appPanel {
+    width: 102%;
+    padding-top: 3px; }
+  #main .searchPage .result {
+    margin: 10px 0 15px;
+    color: #f0f0f0; }
+  #main .searchPage .word {
+    font-weight: 700;
+    color: #fff; }
+  #main .searchPage .commonList {
+    margin-left: 0;
+    padding-left: 0; }
+    #main .searchPage .commonList li {
+      position: relative;
+      float: left;
+      margin: 0 20px 10px 0;
+      cursor: pointer;
+      display: block;
+      width: 95%;
+      padding: 6px 0;
+      background: url(../images/opacity1.png) repeat left top;
+      color: #f0f0f0;
+      min-width: 380px;
+      border: 3px solid rgba(255, 255, 255, 0); }
+      #main .searchPage .commonList li a.fix {
+        overflow: hidden;
+        display: block; }
+      #main .searchPage .commonList li:hover {
+        background: url(../images/opacity2.png) repeat left top;
+        border: 3px solid rgba(255, 255, 255, 0.3); }
+        #main .searchPage .commonList li:hover .status {
+          background-position: 16px -684px; }
+        #main .searchPage .commonList li:hover .add, #main .searchPage .commonList li:hover .added, #main .searchPage .commonList li:hover .download, #main .searchPage .commonList li:hover .redHeart {
+          display: block !important; }
+      #main .searchPage .commonList li.pauseState, #main .searchPage .commonList li.playState {
+        background: #d5dcf8;
+        outline: 0; }
+        #main .searchPage .commonList li.pauseState .status, #main .searchPage .commonList li.playState .status {
+          background: url(../images/playState1.gif) no-repeat 18px center; }
+        #main .searchPage .commonList li.pauseState .heart, #main .searchPage .commonList li.playState .heart {
+          background-position: 0 -150px; }
+        #main .searchPage .commonList li.pauseState .add, #main .searchPage .commonList li.playState .add {
+          background-position: 0 -550px; }
+        #main .searchPage .commonList li.pauseState .download, #main .searchPage .commonList li.playState .download {
+          background-position: 0 -1700px; }
+        #main .searchPage .commonList li.pauseState .song, #main .searchPage .commonList li.pauseState .singer, #main .searchPage .commonList li.playState .song, #main .searchPage .commonList li.playState .singer {
+          color: #4c75c5; }
+      #main .searchPage .commonList li.pauseState .status {
+        background: url(../images/pauseState1.gif) no-repeat 18px center; }
+    #main .searchPage .commonList span {
+      display: block;
+      float: left; }
+    #main .searchPage .commonList .song {
+      float: none;
+      width: 210px;
+      font-size: 14px; }
+    #main .searchPage .commonList .singer {
+      min-width: 48px;
+      max-width: 125px;
+      font-size: 12px;
+      color: #b4b4b4; }
+    #main .searchPage .commonList .heartNum {
+      width: 70px;
+      margin: 3px 0 0 15px;
+      text-indent: 12px;
+      font: 12px/1.5em "宋体";
+      background: url(../images/iconList.png) no-repeat 0 -344px;
+      color: red; }
+    #main .searchPage .commonList .status {
+      width: 50px;
+      height: 50px;
+      background: url(../images/iconList.png) no-repeat;
+      background-position: 50px 50px; }
+    #main .searchPage .commonList .group {
+      width: 210px; }
+    #main .searchPage .commonList .add, #main .searchPage .commonList .heart, #main .searchPage .commonList .redHeart, #main .searchPage .commonList .added, #main .searchPage .commonList .download {
+      display: none;
+      width: 20px;
+      height: 20px;
+      margin: 18px 10px 0;
+      float: right;
+      background: url(../images/iconList.png) no-repeat; }
+    #main .searchPage .commonList .redHeart {
+      float: right;
+      display: block;
+      margin-left: 10px;
+      background: url(../images/iconList.png) no-repeat 0 -250px; }
+    #main .searchPage .commonList .added {
+      background-position: 0 -650px;
+      cursor: default; }
+    #main .searchPage .commonList .heart {
+      float: right;
+      display: block;
+      background-position: 0 0; }
+    #main .searchPage .commonList .add {
+      background-position: 0 -400px; }
+    #main .searchPage .commonList .download {
+      background-position: 0 -1600px; }
+
+.show {
+  display: block !important; }
+
+#listNew {
+  position: absolute;
+  bottom: 5px;
+  left: 335px;
+  width: 320px;
+  max-height: 600px;
+  z-index: 300;
+  outline: 3px solid rgba(0, 0, 0, 0.2); }
+  #listNew .menu {
+    position: relative;
+    height: 50px;
+    background: #486e79; }
+    #listNew .menu a {
+      color: #A4A5A7;
+      cursor: pointer; }
+    #listNew .menu .state {
+      float: left;
+      width: 16px;
+      height: 50px; }
+  #listNew .playState .state {
+    background: url(../images/playState3.gif) no-repeat left center; }
+  #listNew .pauseState .state {
+    background: url(../images/pauseState3.gif) no-repeat left center; }
+  #listNew .tempList, #listNew .redList, #listNew .localList {
+    float: left;
+    width: 90px;
+    margin: 0;
+    font: 16px/50px "Microsoft YaHei";
+    letter-spacing: 1px;
+    text-align: center; }
+    #listNew .tempList:hover, #listNew .redList:hover, #listNew .localList:hover {
+      color: white; }
+  #listNew a.active {
+    color: #fff;
+    background: url(../images/iconList.png) no-repeat 35px -1159px; }
+  #listNew a:hover .delete {
+    display: block; }
+  #listNew a:hover .num {
+    text-indent: 9999px;
+    background: url(../images/iconList.png) no-repeat 3px -790px; }
+  #listNew li span {
+    display: block;
+    float: left; }
+  #listNew li a {
+    display: block;
+    height: 36px;
+    padding: 0 12px 0 5px;
+    font: 12px/36px "simsun";
+    color: #8a7272; }
+    #listNew li a:hover {
+      background: #cdddff; }
+  #listNew li.odd {
+    background: whitesmoke; }
+  #listNew li.pauseState .num {
+    display: block;
+    text-indent: 9999px;
+    background: url(../images/pauseState1.gif) no-repeat center center; }
+  #listNew li.playState .num {
+    display: block;
+    text-indent: 9999px;
+    background: url(../images/playState1.gif) no-repeat center center; }
+  #listNew li.playState .song {
+    color: #4d76c6; }
+  #listNew .list {
+    height: 360px;
+    overflow: hidden;
+    overflow-y: auto;
+    background: white; }
+    #listNew .list ul {
+      display: none;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+  #listNew .close {
+    float: right;
+    margin-right: 5px;
+    width: 45px;
+    height: 20px;
+    background: url(../images/iconList.png) no-repeat 19px -993px; }
+    #listNew .close:hover {
+      background: url(../images/iconList.png) no-repeat 0 -1050px; }
+    #listNew .close:active {
+      background: url(../images/iconList.png) no-repeat 0 -1100px; }
+  #listNew .group {
+    width: 150px; }
+    #listNew .group .song {
+      width: 127px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; }
+  #listNew .num {
+    width: 20px;
+    height: 33px;
+    margin-right: 3px;
+    text-align: center; }
+  #listNew .song {
+    color: #3A3A3A;
+    width: 150px; }
+  #listNew .singer {
+    float: left;
+    width: 66px; }
+  #listNew .redHeart {
+    float: right;
+    margin-left: 10px;
+    background: url(../images/iconList.png) no-repeat 0 -250px; }
+  #listNew .delete, #listNew .heart, #listNew .redHeart {
+    width: 20px;
+    height: 20px;
+    margin-top: 12px; }
+  #listNew .delete {
+    display: none;
+    background: url(../images/iconList.png) no-repeat 0 -900px; }
+    #listNew .delete:hover {
+      background: url(../images/iconList.png) no-repeat 0 -950px; }
+  #listNew .heart {
+    float: right;
+    margin-left: 10px;
+    background: url(../images/iconList.png) no-repeat 0 -300px; }
+    #listNew .heart:hover {
+      background: url(../images/iconList.png) no-repeat 0 -1250px; }
+  #listNew .checkbox {
+    width: 15px;
+    height: 100%;
+    margin-right: 5px;
+    background: url(../images/iconList.png) no-repeat 0 -1290px; }
+  #listNew .checkState .checkbox {
+    background-position: 0 -1340px; }
+  #listNew .lbEmpty {
+    cursor: pointer; }
+  #listNew .empty, #listNew .lsEmpty, #listNew .hxEmpty {
+    margin: 60px auto;
+    width: 300px;
+    height: 203px; }
+  #listNew .empty {
+    color: #9E9E9E;
+    background: white url(../images/iconPrompt.png) no-repeat 105px -500px; }
+    #listNew .empty p {
+      text-align: center; }
+    #listNew .empty .text {
+      padding: 90px 0 8px; }
+    #listNew .empty .dr, #listNew .empty .zc {
+      display: inline;
+      font: 16px/1.5em "Microsoft YaHei"; }
+      #listNew .empty .dr:hover, #listNew .empty .zc:hover {
+        background: 0 0; }
+    #listNew .empty .dr {
+      color: #6C7FBA;
+      padding-right: 3px; }
+    #listNew .empty .zc {
+      color: #818A10;
+      padding-left: 3px; }
+  #listNew .lsEmpty {
+    background: url(../images/iconPrompt.png) no-repeat 0 0; }
+  #listNew .hxEmpty {
+    background: url(../images/iconPrompt.png) no-repeat 0 -250px; }
+  #listNew .toolsBar {
+    height: 27px;
+    line-height: 27px;
+    border-top: 1px solid #c8c8c8;
+    padding: 5px 10px 5px 5px;
+    background: #f0f0f0;
+    font-size: 12px;
+    font-family: "simsun"; }
+    #listNew .toolsBar a {
+      float: left;
+      margin-right: 5px;
+      color: #666666; }
+      #listNew .toolsBar a:hover {
+        color: #4d75c6; }
+    #listNew .toolsBar .numWrap {
+      float: right;
+      margin-top: 2px;
+      color: #666666; }
+  #listNew .emptyToolsBar {
+    background: #fff;
+    border-color: white; }
+    #listNew .emptyToolsBar .inner {
+      display: none; }
+  #listNew .toolCkeckAll {
+    color: #666;
+    margin: 1px 10px 0 0;
+    background: url(../images/iconList.png) no-repeat 0 -1295px;
+    padding-left: 20px; }
+    #listNew .toolCkeckAll .checkState {
+      background-position: 0 -1345px; }
+  #listNew .toolAddItem, #listNew .toolDelItem {
+    width: 72px;
+    height: 27px;
+    overflow: hidden;
+    text-indent: -999px;
+    background: url(../images/btnTools.png) no-repeat; }
+  #listNew .toolAddItem {
+    background-position: 0 -29px; }
+    #listNew .toolAddItem:hover {
+      background-position: 0 -58px; }
+    #listNew .toolAddItem:active {
+      background-position: 0 -87px; }
+    #listNew .toolAddItem.disabled {
+      background-position: 0 0; }
+  #listNew .toolDelItem {
+    background-position: -74px -29px; }
+    #listNew .toolDelItem:hover {
+      background-position: -74px -58px; }
+    #listNew .toolDelItem:active {
+      background-position: -74px -87px; }
+    #listNew .toolDelItem.disabled {
+      background-position: -74px 0; }
+
+/*# sourceMappingURL=player.css.map */

@@ -1,0 +1,2597 @@
+@charset "GBK";
+html, body {
+  font: 16px/1.5em 'Î¢ÈíÑÅºÚ';
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+body {
+  background: #cccccc; }
+
+a, a:visited {
+  text-decoration: none;
+  outline: 0;
+  color: #fff;
+  cursor: pointer; }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-button {
+  display: none; }
+
+::-webkit-scrollbar-track, ::-webkit-scrollbar-track-piece {
+  background: -webkit-gradient(linear, left);
+  width: 10px;
+  height: 10px; }
+
+::-webkit-scrollbar-thumb {
+  border-width: 0 3px;
+  border-style: solid;
+  border-color: #fefefe;
+  border-radius: 6px;
+  background: #d9d9d9; }
+
+::-webkit-scrollbar-thumb:horizontal {
+  border-width: 3px 0;
+  border-style: solid;
+  border-color: #fefefe;
+  border-radius: 5px;
+  background: #d9d9d9; }
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bdbdbd; }
+
+::-webkit-scrollbar-thumb:active {
+  background: #8e8e8e; }
+
+#main, #listNew .list {
+  scrollbar-arrow-color: #8e8e8e;
+  scrollbar-face-color: #8e8e8e;
+  scrollbar-3dlight-color: #fefefe;
+  scrollbar-highlight-color: #fefefe;
+  scrollbar-shadow-color: #fefefe;
+  scrollbar-darkshadow-color: #fefefe;
+  scrollbar-track-color: #fefefe;
+  scrollbar-base-color: #fefefe; }
+
+.redHeart {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -250px; }
+
+.anchorTop {
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  width: 54px;
+  height: 54px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -450px;
+  z-index: 998; }
+
+.anchorTop:hover {
+  background-postion: -60px -450px; }
+
+.anchorTop:active {
+  background-postion: -123px -454px; }
+
+#page {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative; }
+
+#header {
+  z-index: 6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  font: 12px/40px "ËÎÌå";
+  background: url(http://app.ttdtweb.com/dongting/styles/images/headBG-c54ed6.png) repeat-x left top; }
+
+#content {
+  z-index: 5;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+#pageTitle {
+  z-index: 2;
+  position: absolute;
+  left: 333px;
+  top: 0;
+  right: 0;
+  display: none; }
+
+#aside {
+  z-index: 3;
+  position: absolute;
+  width: 338px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/bgLeft-ef2548.png) repeat-y top left; }
+
+#main {
+  z-index: 1;
+  position: absolute;
+  left: 333px;
+  top: 30px;
+  right: 5px;
+  bottom: 30px;
+  padding-left: 22px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/mainBG-a99fac.png) repeat top left; }
+
+.panel {
+  display: none; }
+
+.appPanel {
+  width: 102%;
+  padding-top: 3px; }
+
+#footer {
+  position: absolute;
+  left: 330px;
+  right: 0;
+  bottom: 0;
+  padding: 5px 10px;
+  text-align: right;
+  color: #787878;
+  font: 12px/1.5em Tahoma;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/recordBG-f3773b.png) repeat 0 0;
+  z-index: 2; }
+
+.recordInfo a {
+  color: #787878; }
+
+.recordInfo a:hover {
+  color: white; }
+
+.subPage #main, .searchPage #main {
+  top: 65px; }
+
+.subPage #pageTitle, .searchPage #pageTitle {
+  display: block; }
+
+.subPage #subTitle {
+  display: block; }
+
+.searchPage #searchTitle {
+  display: block; }
+
+.uiLoadTip {
+  display: none;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  padding: 0 15px;
+  margin-left: 90px;
+  z-index: 999;
+  width: 150px;
+  height: 50px;
+  border: 1px solid #282828;
+  border-radius: 3px;
+  line-height: 50px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity3-93ba16.png) repeat; }
+
+.uiLoadTip .icon {
+  float: left;
+  width: 31px;
+  height: 50px;
+  margin-right: 15px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/uiLoadTip-db34c7.gif) no-repeat center; }
+
+.uiLoadError {
+  display: none;
+  position: absolute;
+  top: 38%;
+  left: 50%;
+  margin-left: 40px;
+  z-index: 998;
+  width: 260px;
+  padding: 20px 0 16px;
+  border-radius: 3px;
+  font-size: 36px;
+  line-height: 1.2em;
+  text-align: center;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat; }
+
+.uiLoadError a {
+  font-size: 18px; }
+
+.uiLoadError a:hover {
+  border-bottom: 1px solid white; }
+
+.uiLoadMore, .panelLoadError {
+  clear: both;
+  display: none;
+  margin-left: 170px; }
+
+.uiLoadMore .icon {
+  margin: auto;
+  width: 100px;
+  height: 40px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/uiLoadMore-75e346.gif) no-repeat center; }
+
+.panelLoadError .text {
+  text-align: center;
+  margin: 0 auto;
+  height: 40px;
+  line-height: 40px; }
+
+.panelLoadError a:hover {
+  text-decoration: underline; }
+
+.update {
+  display: none;
+  width: 220px;
+  height: 42px;
+  line-height: 42px;
+  margin-bottom: 17px;
+  border: 2px solid #D2D86C;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  background: #f8ff9f; }
+
+.update a {
+  text-decoration: underline;
+  color: #333333; }
+
+.listEmpty {
+  line-height: 150px;
+  text-align: center; }
+
+#singerlistPanel .uiLoadMore, #singerlistPanel .panelLoadError, #searchlistPanel .uiLoadMore, #searchlistPanel .panelLoadError, #plazaPanel .uiLoadMore, #plazaPanel .panelLoadError {
+  margin: auto; }
+
+.pageTitle {
+  display: none;
+  float: left;
+  height: 32px;
+  padding: 22px;
+  font: 400 24px/32px 'Î¢ÈíÑÅºÚ';
+  white-space: nowrap; }
+
+.pageTitle .btnBack {
+  margin-left: 20px;
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  overflow: hidden;
+  text-indent: 100%;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -400px; }
+
+.pageTitle .btnBack:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -50px -400px; }
+
+.pageTitle .btnBack:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -100px -400px; }
+
+.head .userDataBox {
+  float: right;
+  height: 40px;
+  margin-right: 10px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/headLine-42ed54.png) no-repeat center right; }
+
+.head .left {
+  float: left;
+  width: 331px;
+  height: 40px; }
+
+.head .logo {
+  float: left;
+  margin: 3px 0 0 10px; }
+
+.head .logo a img {
+  display: none; }
+
+.head .logo a.logoLink {
+  float: left;
+  width: 123px;
+  height: 35px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat 0 0; }
+
+.head .login {
+  padding: 0 10px; }
+
+.head .login a {
+  text-align: center;
+  color: #9f9fa1; }
+
+.head .login a:hover {
+  color: white; }
+
+.head .loginActiveHover {
+  position: relative;
+  background: #fff;
+  color: #333;
+  height: 50px;
+  z-index: 10; }
+
+.head .loginActiveHover .menu {
+  display: block; }
+
+.head .userHead {
+  float: left;
+  display: block;
+  width: 30px;
+  height: 30px;
+  padding: 5px 10px; }
+
+.head .info {
+  float: left;
+  width: 80px;
+  margin-top: 4px;
+  cursor: pointer; }
+
+.head .userName {
+  display: block;
+  height: 18px;
+  line-height: 18px; }
+
+.head .num {
+  display: block;
+  height: 16px;
+  line-height: 16px;
+  color: red;
+  text-indent: 15px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -345px; }
+
+.head .menu {
+  position: absolute;
+  left: 0;
+  top: 48px;
+  background: #fff;
+  display: none; }
+
+.head .menu li {
+  display: block;
+  width: 130px;
+  height: 30px;
+  line-height: 30px;
+  text-indent: 15px;
+  border-top: 1px solid #ccc;
+  color: #545253;
+  cursor: pointer; }
+
+.head .menu li:hover {
+  background: #e6e6e6;
+  color: #0a8cd2; }
+
+.head .menu li.active {
+  background-image: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png);
+  background-repeat: no-repeat;
+  background-position: 112px -1792px; }
+
+.head .right {
+  margin-left: 331px;
+  min-width: 630px; }
+
+#nav {
+  float: left;
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  font-family: ËÎÌå; }
+
+#nav li {
+  float: left;
+  margin-right: 5px; }
+
+#nav li > a {
+  display: block;
+  height: 38px;
+  padding: 0 6px;
+  color: #afafaf; }
+
+#nav li > a:hover {
+  color: white; }
+
+#nav li > a.active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity4-e164b8.png) repeat;
+  color: white; }
+
+#nav li.hasSub > a {
+  padding: 0 18px 0 8px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 100% -1982px; }
+
+#nav li.hasSubActive > a {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/hasSubActive-0df12d.png) no-repeat 100% 0; }
+
+#nav li.hasSub:hover > a, #nav li.hasSub > a:hover {
+  margin-top: 2px;
+  height: 36px;
+  line-height: 38px;
+  border-radius: 1px 1px 0 0;
+  color: #434142;
+  background: white url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 100% -2034px; }
+
+#nav li.hasSub {
+  position: relative; }
+
+#nav li .subNav {
+  display: none;
+  position: absolute;
+  left: 0;
+  width: 100px;
+  padding: 5px 0 0;
+  background: #fff;
+  border-radius: 0 1px 1px; }
+
+#nav li.refresh {
+  position: relative;
+  z-index: 0; }
+
+#nav li.refresh i {
+  position: absolute;
+  top: 3px;
+  right: -3px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1400px;
+  width: 23px;
+  height: 14px; }
+
+#nav li .subNav a {
+  color: #555;
+  display: block;
+  padding: 0 10px;
+  margin: 2px 0;
+  line-height: 28px;
+  height: 28px;
+  white-space: nowrap; }
+
+#nav li .subNav a:hover {
+  background: #e6e6e6; }
+
+#nav li .subNav a.active {
+  border-left: 5px solid #11b2eb;
+  padding-left: 5px; }
+
+#nav li .showBanner {
+  display: none;
+  position: absolute;
+  width: 580px;
+  height: 240px;
+  left: 330px;
+  top: 38px;
+  padding: 10px;
+  background: white; }
+
+#nav li.ttshow {
+  width: 82px;
+  position: static; }
+
+#nav li.ttshow i {
+  float: right;
+  margin: -31px 6px 0 0;
+  width: 9px;
+  height: 9px;
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 100% -2100px; }
+
+#nav li .showBanner2 {
+  display: none;
+  position: absolute;
+  width: 594px;
+  height: 292px;
+  left: 330px;
+  top: 38px;
+  padding: 5px;
+  background: white; }
+
+#nav li.fmshow {
+  width: 96px;
+  position: static; }
+
+#nav li.fmshow i {
+  float: right;
+  margin: -31px 6px 0 0;
+  width: 9px;
+  height: 9px;
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 100% -2100px; }
+
+.ttshow .showBanner {
+  background: white url(http://app.ttdtweb.com/dongting/images/ttxiu-b512cb.jpg) center center no-repeat !important; }
+
+.search, .search .searchButton, .search .inner {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat; }
+
+.search {
+  position: relative;
+  float: left;
+  max-width: 200px;
+  min-width: 116px;
+  width: 160px;
+  padding-left: 10px;
+  margin: 7px 0 0 10px;
+  background-position: 0 -40px; }
+
+.search .inner {
+  position: relative;
+  background-position: 100% -66px;
+  padding-right: 10px; }
+
+.search:hover {
+  background-position: 0 -93px; }
+
+.search:hover .inner {
+  background-position: 100% -119px; }
+
+.searchActive, .searchActive:hover {
+  background-position: 0 -145px; }
+
+.searchActive .inner, .searchActive:hover .inner {
+  background-position: 100% -171px; }
+
+.search .inner {
+  height: 26px; }
+
+.search .missWord {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  right: 10px;
+  background: #fff;
+  z-index: 9999;
+  display: none; }
+
+.search .missWord li {
+  height: 25px;
+  line-height: 25px;
+  text-indent: 10px;
+  color: #323232; }
+
+.search .missWord .on {
+  background: #e8e8e8; }
+
+.search .searchBox, .search .searchButton {
+  height: 26px;
+  border: 0; }
+
+.search .searchBox {
+  position: absolute;
+  left: 15px;
+  top: 0;
+  right: 5px;
+  height: 16px;
+  line-height: 16px;
+  margin-top: 5px;
+  color: #323232;
+  background: 0 0; }
+
+.search .searchButton {
+  position: absolute;
+  top: 1px;
+  left: -5px;
+  width: 20px;
+  background-position: 0 -196px;
+  cursor: pointer; }
+
+.search .promptText {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 26px;
+  line-height: 26px;
+  color: gray; }
+
+.search .placehodler {
+  color: #cccccc; }
+
+.head .otherBar {
+  float: right;
+  margin: 0 5px 0 0; }
+
+.head .icon {
+  position: relative;
+  float: left; }
+
+.head .skin, .head .feedback, .head .quikLink {
+  display: block;
+  float: left;
+  width: 30px;
+  height: 40px;
+  cursor: pointer; }
+
+.head .skin {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat 5px -238px;
+  margin: 0 5px; }
+
+.head .skinHover, .head .skin:hover {
+  background: white url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat -45px -238px; }
+
+.head .skinList {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 5px;
+  width: 400px;
+  background: #fff;
+  z-index: 999;
+  padding-bottom: 5px; }
+
+.head .skinList ul {
+  margin: 5px 0 5px 5px;
+  min-height: 265px; }
+
+.head .skinList .ulBg {
+  background: center url(http://app.ttdtweb.com/dongting/styles/images/uiLoadMore-75e346.gif) no-repeat no-repeat; }
+
+.head .skinList li {
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 80px;
+  margin: 5px; }
+
+.head .skinList a {
+  display: block;
+  margin-top: 20px;
+  -webkit-transition: -webkit-transform .5s;
+  -moz-transition: -moz-transform .5s;
+  -o-transition: -o-transform .5s;
+  -ms-transition: -ms-transform 0.5s; }
+
+.head .skinList a:hover {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  border: 2px solid #26C4F1;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1); }
+
+.head .skinList img {
+  display: block;
+  margin: 0 auto;
+  width: 60px;
+  height: 40px; }
+
+.head .skinSelect {
+  position: absolute;
+  display: block;
+  width: 124px;
+  height: 84px;
+  top: -2px;
+  left: -2px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat -100px -200px; }
+
+.head .feedback {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat 5px -288px; }
+
+.head .feedback:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat -45px -288px; }
+
+.head .feedback:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconTop-b4e82b.png) no-repeat -98px -288px; }
+
+.head .quikLink {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1840px; }
+
+.head .quikLink:hover {
+  background-position: 0 -1890px; }
+
+.head .quikLink:active {
+  background-position: 0 -1940px; }
+
+@media screen and (max-device-width: 1024px) and (orientation: landscape) {
+  .head .right {
+    min-width: 692px; }
+
+  .head .nav {
+    margin-right: 0; }
+
+  .head .promptText {
+    left: 8px;
+    font-size: 10px; }
+
+  .head .skin {
+    margin: 0; }
+
+  .head .skinList {
+    right: 30px; } }
+.bgContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: 0; }
+
+.bgContainer img {
+  position: relative; }
+
+.bgContainer .hideImg {
+  display: none; }
+
+.player .message {
+  display: block;
+  padding: 0 15px;
+  margin: 15px 8px 15px 0;
+  line-height: 1.8em;
+  text-align: center;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  -webkit-user-select: auto;
+  -khtml-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto; }
+
+.player .song {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 400; }
+
+.player .singer {
+  display: block;
+  font-size: 14px; }
+
+.player .song, .player .singer {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; }
+
+.player .picTools {
+  z-index: 3;
+  position: relative;
+  margin-right: 8px; }
+
+.player .wrap {
+  position: relative;
+  width: 191px;
+  height: 186px;
+  margin: 0 auto; }
+
+.player .album {
+  z-index: 101;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 191px;
+  height: 186px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -850px; }
+
+.player img, .player .wrap span {
+  position: absolute;
+  top: 4px;
+  left: 5px;
+  width: 176px;
+  height: 176px; }
+
+.player img {
+  z-index: 100; }
+
+.player .wrap span {
+  z-index: 101; }
+
+.player .dvd {
+  z-index: 99;
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 170px;
+  height: 170px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 1px -1200px;
+  -webkit-transition: left .5s;
+  -moz-transition: left .5s;
+  -o-transition: left .5s;
+  -ms-transition: left 0.5s; }
+
+.player .playCD {
+  left: 60px; }
+
+.player .wrap span a {
+  display: block;
+  position: absolute;
+  bottom: 5px;
+  height: 37px;
+  width: 37px;
+  background: #000;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  transition: opacity .5s;
+  -webkit-transition: opacity .5s;
+  -moz-transition: opacity .5s;
+  -o-transition: opacity .5s;
+  -ms-transition: opacity 0.5s; }
+
+.player .wrap:hover span a {
+  opacity: 1;
+  filter: alpha(opacity=100); }
+
+.player .wrap span .refreshPic {
+  left: 50px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/refresh-01-964254.png) no-repeat 6px; }
+
+.player .wrap:hover span .refreshPic {
+  display: none; }
+
+.player .wrap span .refreshPic:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/refresh-02-c86382.png) no-repeat 6px; }
+
+.player .wrap span .refreshPic:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/refresh-03-fe49d6.png) no-repeat 6px; }
+
+.player .wrap span .picError {
+  left: 5px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/picError-01-7f4ae5.png) no-repeat 6px; }
+
+.player .wrap span .picError:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/picError-02-334f56.png) no-repeat 6px; }
+
+.player .wrap span .picError:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/picTool/picError-03-28a031.png) no-repeat 6px; }
+
+.player .smallWrap {
+  width: 108px;
+  height: 105px; }
+
+.player .smallWrap .album {
+  width: 108px;
+  height: 104px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -1050px; }
+
+.player .smallWrap img, .player .smallWrap span {
+  top: 2px;
+  left: 3px;
+  width: 100px;
+  height: 100px; }
+
+.player .smallWrap span {
+  width: 50px; }
+
+.player .smallWrap span .refreshPic {
+  margin-top: 7px; }
+
+.player .smallWrap .dvd {
+  top: 4px;
+  left: 6px;
+  width: 97px;
+  height: 97px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -1400px; }
+
+.player .smallWrap .playCD {
+  left: 33px; }
+
+.player .handle {
+  position: relative;
+  width: 273px;
+  height: 20px;
+  padding: 12px 19px 21px 38px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/lyric-25f84b.png) repeat-x left bottom; }
+
+.player .handle a {
+  float: left;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: 25px;
+  cursor: pointer; }
+
+.player .handle .shareWrap {
+  float: left;
+  margin-left: 25px;
+  width: 20px;
+  height: 24px; }
+
+.player .bdsharebuttonbox {
+  display: none;
+  position: absolute;
+  top: 30px;
+  left: 194px;
+  width: 90px;
+  max-width: 155px;
+  background: #fff;
+  padding: 2px 1px 1px 4px;
+  z-index: 200;
+  border-radius: 6px;
+  border: 3px solid rgba(241, 158, 82, 0.5); }
+
+.player .bdsharebuttonbox a {
+  font-size: 12px;
+  clear: both;
+  float: none;
+  display: block;
+  width: 65px;
+  height: 21px;
+  margin: 4px;
+  padding-top: 1px;
+  padding-bottom: 0;
+  padding-left: 25px;
+  color: #333333; }
+
+.player .handle .download {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -97px -150px; }
+
+.player .handle .kokOn {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 0; }
+
+.player .handle .kokOff {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -100px 0; }
+
+.player .handle .horn {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -200px 0; }
+
+.player .handle .mute {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -50px; }
+
+.player .handle .share {
+  margin-left: 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -100px -50px; }
+
+.player .handle .heart {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -200px -50px; }
+
+.player .handle .repeat {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -100px; }
+
+.player .handle .random {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -100px -100px; }
+
+.player .handle .repOne {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -200px -100px; }
+
+.player .handle .order {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -150px; }
+
+.player .handle .download:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -147px -150px; }
+
+.player .handle .kokOn:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -50px 0; }
+
+.player .handle .kokOff:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -150px 0; }
+
+.player .handle .horn:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -250px 0; }
+
+.player .handle .mute:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -50px -50px; }
+
+.player .handle .share:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -150px -50px; }
+
+.player .handle .heart:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -250px -50px; }
+
+.player .handle .repeat:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -50px -100px; }
+
+.player .handle .random:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -150px -100px; }
+
+.player .handle .repOne:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -250px -100px; }
+
+.player .handle .order:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -50px -150px; }
+
+.player .handle #p_mute span {
+  display: block; }
+
+.player .handle #p_mute > span {
+  display: none;
+  width: 50px;
+  height: 5px;
+  padding: 10px 15px 10px 5px;
+  margin: -5px 0 0 19px; }
+
+.player .handle #p_mute:hover > span, .player .handle #p_mute > .showVolume {
+  display: block; }
+
+.player .handle #p_mute .volumeBg, .player .handle #p_mute .volumeFg, .player .handle .volumeBg > span {
+  height: 100%;
+  cursor: pointer; }
+
+.player .handle .volumeBg {
+  width: 60px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -200px; }
+
+.player .handle .volumeBg > span {
+  width: 50px; }
+
+.player .handle .volumeFg {
+  width: 100%;
+  position: relative;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -100px -200px; }
+
+.player .handle .volumeFg span {
+  width: 12px;
+  height: 12px;
+  padding: 5px;
+  position: absolute;
+  top: -9px;
+  right: -18px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -198px -200px; }
+
+.player .handle .volumeFg span:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -252px -200px; }
+
+.player .lyrics {
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  bottom: 97px;
+  width: 330px;
+  height: 280px;
+  line-height: 1.8em;
+  overflow: hidden;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer; }
+
+.player .lyrics #lyricArea {
+  position: relative; }
+
+.player .lyrics > hr {
+  display: none;
+  margin-top: 65px;
+  border: 1px solid #26C4F1;
+  border-top: 0; }
+
+.player .lyrics > p {
+  display: none;
+  text-align: center;
+  color: white; }
+
+.player .lyrics .foo {
+  position: absolute;
+  bottom: -40px;
+  left: 50px;
+  width: 228px;
+  height: 38px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/lrcTime/lrcBg-9d84a5.png) no-repeat;
+  -webkit-transition: bottom .5s;
+  -ms-transition: bottom .5s;
+  -moz-transition: bottom .5s;
+  -o-transition: bottom 0.5s; }
+
+.player .foo a {
+  display: block;
+  float: left;
+  width: 16.66%;
+  height: 38px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/lrcTime/foo01-62da47.png) no-repeat; }
+
+.player .foo a:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/lrcTime/foo02-411cc7.png) no-repeat; }
+
+.player .foo a:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/lrcTime/foo03-663970.png) no-repeat; }
+
+.player .foo .lyricSearchBtn, .player .foo .lyricSearchBtn:hover, .player .foo .lyricSearchBtn:active {
+  background-position: 13px 13px; }
+
+.player .foo .lyricTimeUp, .player .foo .lyricTimeUp:hover, .player .foo .lyricTimeUp:active {
+  background-position: 13px -36px; }
+
+.player .foo .lyricTimeReset, .player .foo .lyricTimeReset:hover, .player .foo .lyricTimeReset:active {
+  background-position: 13px -88px; }
+
+.player .foo .lyricTimeDown, .player .foo .lyricTimeDown:hover, .player .foo .lyricTimeDown:active {
+  background-position: 13px -136px; }
+
+.player .foo .kokOn, .player .foo .kokOn:hover, .player .foo .kokOn:active {
+  background-position: 13px -187px; }
+
+.player .foo .kokOff, .player .foo .kokOff:hover, .player .foo .kokOff:active {
+  background-position: 13px -288px; }
+
+.player .foo .lyricErrorTip, .player .foo .lyricErrorTip:hover, .player .foo .lyricErrorTip:active {
+  background-position: 11px -237px; }
+
+.player .lyrics:hover .foo {
+  display: block;
+  bottom: 20px; }
+
+.player .lyrics ul {
+  position: absolute;
+  left: 0;
+  top: 150px;
+  width: 100%; }
+
+.player .lyrics .transitionTop {
+  transition: top .5s;
+  -webkit-transition: top .5s;
+  -moz-transition: top .5s;
+  -o-transition: top 0.5s; }
+
+.player .lyrics li {
+  height: 28px;
+  line-height: 28px;
+  font-size: 14px;
+  transition: color .5s;
+  -webkit-transition: color .5s;
+  -moz-transition: color .5s;
+  -o-transition: color 0.5s; }
+
+.player .lyrics li span {
+  display: inline-block; }
+
+.player .lyrics .normal li {
+  text-align: center;
+  color: #c6b7b7; }
+
+.player .lyrics .kok li span {
+  visibility: hidden;
+  overflow: hidden;
+  white-space: nowrap; }
+
+.player .lyrics .kok li .widthTransition {
+  transition: width .5s;
+  -webkit-transition: width .5s;
+  -moz-transition: width .5s;
+  -o-transition: width 0.5s; }
+
+.player .lyrics .kok .show {
+  visibility: visible; }
+
+.player .lyrics .normal .curr, .player .lyrics .kok li span {
+  font-size: 16px;
+  color: white; }
+
+.player .lyrics .kokCurr {
+  font-size: 16px; }
+
+.player .bottomWrap {
+  position: absolute;
+  bottom: 0;
+  width: 330px;
+  height: 90px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playBottom-d73748.png) repeat-x left top;
+  z-index: 200; }
+
+.player .progress {
+  width: 330px;
+  height: 2px;
+  margin-top: 1px;
+  background: #fff;
+  filter: alpha(opacity=10);
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer; }
+
+.player .progress span {
+  display: block; }
+
+.player .progress .buffer, .player .progress .reach {
+  position: absolute;
+  top: -6px;
+  left: 0;
+  height: 2px;
+  padding: 7px 0; }
+
+.player .progress .reach {
+  max-width: 320px; }
+
+.player .progress .buffer span, .player .progress .reach span {
+  width: 100%;
+  height: 100%; }
+
+.player .progress .buffer span {
+  background: #26C4F1;
+  filter: alpha(opacity=50);
+  background: rgba(38, 196, 241, 0.5); }
+
+.player .progress .reach span {
+  position: relative;
+  background: white; }
+
+.player .progress .reach span .cursor {
+  display: block;
+  position: absolute;
+  top: -10px;
+  right: -17px;
+  width: 16px;
+  height: 16px;
+  padding: 5px 3px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -198px -200px;
+  z-index: 1000; }
+
+.player .progress .reach span .cursor:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -252px -200px; }
+
+.player .partTime, .player .allTime {
+  display: block;
+  position: absolute;
+  top: 6px;
+  font-size: 12px;
+  height: 20px;
+  line-height: 20px; }
+
+.player .partTime {
+  left: 2px;
+  color: white; }
+
+.player .allTime {
+  right: 2px;
+  color: rgba(255, 255, 255, 0.3);
+  filter: alpha(opacity=30); }
+
+.player .progress .progressTip, .tempListTip {
+  display: none;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  left: 0;
+  top: -30px;
+  font-size: 14px;
+  color: #a0a0a0;
+  text-align: center;
+  text-shadow: 0 0 2px #000;
+  background: #000 \9;
+  filter: alpha(opacity=30);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999; }
+
+.tempListTip {
+  top: auto;
+  bottom: 35px; }
+
+.player .playWrap {
+  height: 66px;
+  margin: 20px 0 10px 18px; }
+
+.player .playWrap a {
+  display: block;
+  float: left;
+  width: 25%;
+  height: 60px; }
+
+.player .forward {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -244px; }
+
+.player .forward:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -100px -244px; }
+
+.player .forward:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -203px -247px; }
+
+.player .preDisabled {
+  cursor: default;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 0 -744px; }
+
+.player .nextDisabled {
+  cursor: default;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -85px -744px; }
+
+.player .playDisabled {
+  cursor: default;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -198px -745px; }
+
+.player .back {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 15px -344px; }
+
+.player .back:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -85px -344px; }
+
+.player .back:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -188px -347px; }
+
+.player .play {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 2px -448px; }
+
+.player .play:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -98px -448px; }
+
+.player .play:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -201px -451px; }
+
+.player .pause {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 2px -548px; }
+
+.player .pause:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -98px -548px; }
+
+.player .pause:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -201px -551px; }
+
+.player .listNew {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat 25px -633px; }
+
+.player .listNew:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -75px -633px; }
+
+.player .listNew:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPlay-63bef2.png) no-repeat -179px -637px; }
+
+#listNew {
+  position: absolute;
+  bottom: 5px;
+  left: 335px;
+  width: 320px;
+  max-height: 600px;
+  z-index: 300;
+  outline: 3px solid rgba(0, 0, 0, 0.2); }
+
+#listNew .menu {
+  position: relative;
+  height: 50px;
+  background: #486e79; }
+
+#listNew .menu a {
+  color: #A4A5A7;
+  cursor: pointer; }
+
+#listNew .menu .state {
+  float: left;
+  width: 16px;
+  height: 50px; }
+
+#listNew .playState .state {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/playState3-ded728.gif) no-repeat left center; }
+
+#listNew .pauseState .state {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/pauseState3-9bd1b1.gif) no-repeat left center; }
+
+#listNew .tempList, #listNew .redList, #listNew .localList {
+  float: left;
+  width: 90px;
+  margin: 0;
+  font: 16px/50px "Î¢ÈíÑÅºÚ";
+  letter-spacing: 1px;
+  text-align: center; }
+
+#listNew a.active {
+  color: #fff;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 35px -1159px; }
+
+#listNew .tempList:hover, #listNew .redList:hover,
+#listNew .localList:hover {
+  color: white; }
+
+#listNew li a {
+  display: block;
+  height: 36px;
+  padding: 0 12px 0 5px;
+  font: 12px/36px "ËÎÌå";
+  color: #8a7272; }
+
+#listNew .list {
+  height: 360px;
+  overflow: hidden;
+  overflow-y: auto;
+  background: white; }
+
+#listNew .list ul {
+  display: none; }
+
+#listNew li.odd {
+  background: whitesmoke; }
+
+#listNew li a:hover {
+  background: #cdddff; }
+
+#listNew li span {
+  display: block;
+  float: left; }
+
+#listNew .close {
+  float: right;
+  margin-right: 5px;
+  width: 45px;
+  height: 20px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 19px -993px; }
+
+#listNew .close:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1050px; }
+
+#listNew .close:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1100px; }
+
+#listNew .group {
+  width: 150px; }
+
+#listNew .num {
+  width: 20px;
+  height: 33px;
+  margin-right: 3px;
+  text-align: center; }
+
+#listNew .song {
+  color: #3A3A3A;
+  width: 150px; }
+
+#listNew .group .song {
+  width: 127px; }
+
+#listNew .singer {
+  float: left;
+  width: 66px; }
+
+#listNew .delete, #listNew .heart, #listNew .redHeart {
+  width: 20px;
+  height: 20px;
+  margin-top: 12px; }
+
+#listNew .delete {
+  display: none;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -900px; }
+
+#listNew .heart {
+  float: right;
+  margin-left: 10px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -300px; }
+
+#listNew .delete:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -950px; }
+
+#listNew .heart:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1250px; }
+
+#listNew a:hover .delete {
+  display: block; }
+
+#listNew a:hover .num {
+  text-indent: 9999px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 3px -790px; }
+
+#listNew li.playState .num {
+  display: block;
+  text-indent: 9999px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/playState1-7e9152.gif) no-repeat center center; }
+
+#listNew li.pauseState .num {
+  display: block;
+  text-indent: 9999px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/pauseState1-c44648.gif) no-repeat center center; }
+
+#listNew li.playState .song {
+  color: #4d76c6; }
+
+#listNew .checkbox {
+  width: 15px;
+  height: 100%;
+  margin-right: 5px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1290px; }
+
+#listNew .checkState .checkbox {
+  background-position: 0 -1340px; }
+
+#listNew .lbEmpty {
+  cursor: pointer; }
+
+#listNew .empty, #listNew .lsEmpty, #listNew .hxEmpty {
+  margin: 60px auto;
+  width: 300px;
+  height: 203px; }
+
+#listNew .empty {
+  color: #9E9E9E;
+  background: white url(http://app.ttdtweb.com/dongting/styles/images/iconPrompt-d0988d.png) no-repeat 105px -500px; }
+
+#listNew .empty p {
+  text-align: center; }
+
+#listNew .empty .text {
+  padding: 90px 0 8px; }
+
+#listNew .empty .dr, #listNew .empty .zc {
+  display: inline;
+  font: 16px/1.5em "Î¢ÈíÑÅºÚ"; }
+
+#listNew .empty .dr:hover, #listNew .empty .zc:hover {
+  background: 0 0; }
+
+#listNew .empty .dr {
+  color: #6C7FBA;
+  padding-right: 3px; }
+
+#listNew .empty .zc {
+  color: #818A10;
+  padding-left: 3px; }
+
+#listNew .lsEmpty {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPrompt-d0988d.png) no-repeat 0 0; }
+
+#listNew .hxEmpty {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconPrompt-d0988d.png) no-repeat 0 -250px; }
+
+#listNew .toolsBar {
+  height: 27px;
+  line-height: 27px;
+  border-top: 1px solid #c8c8c8;
+  padding: 5px 10px 5px 5px;
+  background: #f0f0f0;
+  font-size: 12px;
+  font-family: ËÎÌå; }
+
+#listNew .emptyToolsBar {
+  background: #fff;
+  border-color: white; }
+
+#listNew .emptyToolsBar .inner {
+  display: none; }
+
+#listNew .toolsBar a {
+  float: left;
+  margin-right: 5px;
+  color: #666666; }
+
+#listNew .toolsBar a:hover {
+  color: #4d75c6; }
+
+#listNew .toolCkeckAll {
+  color: #666;
+  margin: 1px 10px 0 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1295px;
+  padding-left: 20px; }
+
+#listNew .toolCkeckAll.checkState {
+  background-position: 0 -1345px; }
+
+#listNew .toolAddItem, #listNew .toolDelItem {
+  width: 72px;
+  height: 27px;
+  overflow: hidden;
+  text-indent: -999px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/btnTools-c2baf5.png) no-repeat; }
+
+#listNew .toolAddItem {
+  background-position: 0 -29px; }
+
+#listNew .toolAddItem:hover {
+  background-position: 0 -58px; }
+
+#listNew .toolAddItem:active {
+  background-position: 0 -87px; }
+
+#listNew .toolAddItem.disabled {
+  background-position: 0 0; }
+
+#listNew .toolDelItem {
+  background-position: -74px -29px; }
+
+#listNew .toolDelItem:hover {
+  background-position: -74px -58px; }
+
+#listNew .toolDelItem:active {
+  background-position: -74px -87px; }
+
+#listNew .toolDelItem.disabled {
+  background-position: -74px 0; }
+
+#listNew .toolsBar .numWrap {
+  float: right;
+  margin-top: 2px;
+  color: #666666; }
+
+#tempListContent li .num {
+  display: none; }
+
+#aside .asideShade {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -8px;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .5;
+  z-index: 1000; }
+
+.commonList {
+  margin-left: 200px;
+  padding-left: 28px; }
+
+.commonList li {
+  position: relative;
+  float: left;
+  margin: 0 20px 10px 0;
+  cursor: pointer; }
+
+.commonList li {
+  display: block;
+  width: 380px;
+  padding: 6px 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top;
+  color: #f0f0f0; }
+
+.commonList span {
+  display: block;
+  float: left; }
+
+.commonList .status {
+  width: 50px;
+  height: 50px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat;
+  background-position: 50px 50px; }
+
+.commonList .group {
+  width: 210px; }
+
+.commonList .song {
+  float: none;
+  width: 210px;
+  font-size: 14px; }
+
+.commonList .singer {
+  min-width: 48px;
+  max-width: 125px;
+  font-size: 12px;
+  color: #b4b4b4; }
+
+.commonList .heartNum {
+  width: 70px;
+  margin: 3px 0 0 15px;
+  text-indent: 12px;
+  font: 12px/1.5em "ËÎÌå";
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -344px;
+  color: red; }
+
+.commonList .add, .commonList .heart, .commonList .redHeart, .commonList .added, .commonList .download {
+  display: none;
+  width: 20px;
+  height: 20px;
+  margin: 18px 10px 0;
+  float: right;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat; }
+
+.commonList .download {
+  background-position: 0 -1600px; }
+
+.commonList .add {
+  background-position: 0 -400px; }
+
+.commonList .added {
+  background-position: 0 -650px;
+  cursor: default; }
+
+.commonList .redHeart {
+  display: block; }
+
+.commonList .download:hover {
+  background-position: 0 -1650px; }
+
+.commonList .add:hover {
+  background-position: 0 -450px; }
+
+.commonList .add:active {
+  background-position: -2px -502px; }
+
+.commonList .heart {
+  float: right;
+  display: block;
+  background-position: 0 0; }
+
+.commonList .heart:hover {
+  background-position: 0 -50px; }
+
+.commonList .heart:active {
+  background-position: 0 -101px; }
+
+.commonList li:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity2-e0216c.png) repeat left top;
+  outline: 3px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid #0FFFFF \9; }
+
+.commonList li:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top; }
+
+.commonList li:hover .add, .commonList li:hover .added, .commonList li:hover .download {
+  display: block; }
+
+.commonList li:hover .status {
+  background-position: 16px -684px; }
+
+.commonList li:active .status {
+  background-position: 12px -738px; }
+
+.commonList .pauseState .status {
+  display: block; }
+
+.commonList li.playState, .commonList li.pauseState {
+  background: #d5dcf8;
+  outline: 0; }
+
+.commonList li.playState .status {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/playState1-7e9152.gif) no-repeat 18px center; }
+
+.commonList li.pauseState .status {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/playState/pauseState1-c44648.gif) no-repeat 18px center; }
+
+.commonList .playState .song, .commonList .playState .singer, .commonList .pauseState .song, .commonList .pauseState .singer {
+  color: #4c75c5; }
+
+.commonList .playState .add, .commonList .pauseState .add {
+  background-position: 0 -550px; }
+
+.commonList .playState .download, .commonList .pauseState .download {
+  background-position: 0 -1700px; }
+
+.commonList .playState .heart, .commonList .pauseState .heart {
+  background-position: 0 -150px; }
+
+.commonList .playState .download:hover, .commonList .pauseState .download:hover {
+  background-position: 0 -1750px; }
+
+.commonList .playState .add:hover, .commonList .pauseState .add:hover {
+  background-position: 0 -600px; }
+
+.commonList .playState .heart:hover, .commonList .pauseState .heart:hover {
+  background-position: 0 -200px; }
+
+.radio {
+  padding-bottom: 40px; }
+
+.radio h2 {
+  padding-bottom: 2px;
+  margin-right: 30px;
+  font: 24px/32px 'Î¢ÈíÑÅºÚ';
+  white-space: nowrap;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/radioLine-577eac.png) repeat-x left 32px; }
+
+.radio li {
+  position: relative;
+  float: left;
+  margin: 15px 15px 0 0; }
+
+.radio img {
+  width: 180px;
+  height: 90px; }
+
+.radio .channel {
+  display: block;
+  margin-top: 3px; }
+
+.radio a {
+  display: block;
+  padding: 10px 10px 3px;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #f0f0f0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top; }
+
+.radio a:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity2-e0216c.png) repeat left top;
+  outline: 3px solid rgba(255, 255, 255, 0.3); }
+
+.radio .status {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 180px;
+  height: 90px;
+  background: rgba(0, 0, 0, 0.7) url(http://app.ttdtweb.com/dongting/styles/images/playState/playState2-c576b6.gif) no-repeat center center;
+  background: black url(http://app.ttdtweb.com/dongting/styles/images/playState/playState2-c576b6.gif) no-repeat center center \9;
+  filter: alpha(opacity=70); }
+
+.radio a:hover .status {
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 0; }
+
+.radio a:active .status {
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -100px; }
+
+.radio .playState .status {
+  display: block; }
+
+.radio .playState a:hover .status {
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -200px; }
+
+.radio .playState a:active .status {
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -300px; }
+
+.radio .pauseState .status {
+  display: block;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 0; }
+
+.radio .pauseState .status:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -100px; }
+
+.plaza .commonList {
+  margin-left: 0;
+  padding-left: 0; }
+
+#listNew .redHeart, .commonList .redHeart {
+  float: right;
+  margin-left: 10px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -250px; }
+
+.songList ol li {
+  float: left;
+  min-width: 230px;
+  width: 297px;
+  margin: 15px 15px 0 0;
+  background: rgba(0, 0, 0, 0.1);
+  background: #000 \9;
+  filter: alpha(opacity=10); }
+
+.songList ol a {
+  position: relative;
+  display: block;
+  padding: 10px;
+  text-align: center;
+  white-space: nowrap;
+  color: #f0f0f0; }
+
+.songList ol a:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity2-e0216c.png) repeat left top;
+  outline: 3px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid #0FFFFF \9; }
+
+.songList ol a:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top;
+  outline: 0; }
+
+.songList ol a img {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px; }
+
+.songList a span {
+  float: left;
+  display: block;
+  width: 150px;
+  text-align: left;
+  padding-left: 10px; }
+
+.songList a .text {
+  font: 14px/1.9em "ËÎÌå"; }
+
+.songListThree .info {
+  position: fixed;
+  top: 110px;
+  left: 355px;
+  width: 200px; }
+
+.songListThree .singerBG {
+  width: 200px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/sbg-5b9c12.png) repeat left top; }
+
+.songListThree .singerImg {
+  display: block;
+  width: 200px; }
+
+.songListThree .account {
+  padding: 15px 5px 5px;
+  font: 12px/1.7em "Î¢ÈíÑÅºÚ";
+  text-indent: 2em; }
+
+.singerTwo li {
+  float: left;
+  min-width: 230px;
+  width: 297px;
+  height: 70px;
+  line-height: 70px;
+  margin: 15px 15px 0 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top; }
+
+.singerTwo a {
+  position: relative;
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  white-space: nowrap;
+  color: #f0f0f0; }
+
+.singerTwo a:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity2-e0216c.png) repeat left top;
+  outline: 3px solid rgba(255, 255, 255, 0.3);
+  outline: 2px solid #0FFFFF \9; }
+
+.singerTwo a:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top;
+  outline: 0; }
+
+.singerTwo a img {
+  display: block;
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin: 10px 15px 0 10px; }
+
+.singerTwo a span {
+  float: left;
+  display: block;
+  width: 150px;
+  text-align: left; }
+
+.wrapBanner {
+  width: 825px;
+  height: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+  margin-right: 27px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top; }
+
+.wrapBanner .banner {
+  position: relative;
+  height: 300px;
+  overflow: hidden; }
+
+.wrapBanner .banner ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3000%; }
+
+.wrapBanner .banner li {
+  float: left; }
+
+.wrapBanner li a {
+  display: block; }
+
+.wrapBanner .right {
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 185px;
+  height: 300px; }
+
+.wrapBanner .right {
+  right: 0;
+  background: rgba(0, 0, 0, 0.5); }
+
+.wrapBanner .prev, .wrapBanner .next {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: 85px;
+  height: 60px; }
+
+.wrapBanner .prev {
+  cursor: pointer;
+  left: 10px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -550px; }
+
+.wrapBanner .next {
+  cursor: pointer;
+  left: 100px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat 0 -650px; }
+
+.wrapBanner .prev:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -100px -550px; }
+
+.wrapBanner .next:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -100px -650px; }
+
+.wrapBanner .prev:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -200px -550px; }
+
+.wrapBanner .next:active {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconMain-23f840.png) no-repeat -200px -650px; }
+
+.picList {
+  padding-top: 5px; }
+
+.picList li {
+  float: left;
+  width: 200px;
+  margin: 0 15px 15px 0;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity1-939ae1.png) repeat left top; }
+
+.picList a {
+  position: relative;
+  display: block;
+  padding: 10px 0 8px;
+  white-space: nowrap;
+  color: #f0f0f0; }
+
+.picList a:hover {
+  background: url(http://app.ttdtweb.com/dongting/styles/images/opacity2-e0216c.png) repeat left top;
+  outline: 3px solid rgba(255, 255, 255, 0.3); }
+
+.picList a:active {
+  outline: 0; }
+
+.picList img {
+  display: block;
+  margin: 0 auto;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/imgBG-0b6418.png) repeat 0 0; }
+
+.picList span {
+  display: block;
+  width: 200px;
+  text-align: center;
+  padding-top: 8px; }
+
+.searchPage .result {
+  margin: 10px 0 15px;
+  color: #f0f0f0; }
+
+.searchPage .commonList {
+  margin-left: 0;
+  padding-left: 0; }
+
+.searchPage .word {
+  font-weight: 700;
+  color: white; }
+
+#shade, #mainShade {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  left: 0;
+  top: 0;
+  position: fixed;
+  z-index: 9999; }
+
+#mainShade {
+  left: 331px;
+  top: 40px;
+  z-index: 2; }
+
+.dialog {
+  color: #999;
+  position: fixed;
+  z-index: 10000;
+  top: 50%;
+  left: 50%;
+  background: #fafafa; }
+
+.dialog .prompt {
+  display: block;
+  padding: 10px;
+  color: #333;
+  font-size: 16px;
+  border: 2px solid #d3da6d;
+  border: 2px solid rgba(211, 218, 109, 0.4);
+  border-radius: 4px;
+  background: #f9ffa1;
+  background: rgba(249, 255, 161, 0.7); }
+
+#numberAdd {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  color: red;
+  font-weight: 700;
+  width: 25px;
+  height: 25px;
+  display: none;
+  font-size: 22px; }
+
+.dialogConfirm, .dialog {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  font-size: 14px;
+  color: #3c3c3c;
+  font-family: SimSun;
+  text-align: center;
+  overflow: hidden; }
+
+#d-confirmBtn, #d-cancelBtn, #d-closeBtn, .dialog .close, .dialog .submit {
+  background-image: url(http://app.ttdtweb.com/dongting/styles/images/iconDialog-2c4118.png);
+  background-repeat: no-repeat;
+  background-color: #fff;
+  cursor: pointer; }
+
+#d-confirmBtn, #d-cancelBtn, .dialog .submit {
+  width: 73px;
+  height: 29px;
+  border: 0;
+  margin: 5px; }
+
+.dialog .header {
+  font-size: 16px;
+  border-bottom: 1px solid #c8c8c8;
+  margin: 5px 10px;
+  text-align: left;
+  padding: 5px 0;
+  display: block;
+  font-weight: 700; }
+
+.dialog .content {
+  clear: both;
+  margin-top: 15px; }
+
+.dialog a {
+  color: #2d77c1; }
+
+#d-closeBtn, .dialog .close {
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  text-indent: -999px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-position: -36px -66px;
+  cursor: pointer; }
+
+#d-closeBtn:hover, .dialog .close:hover {
+  background-position: -18px -66px; }
+
+#d-closeBtn:active, .dialog .close:active {
+  background-position: 0 -66px; }
+
+.dialog .submit {
+  background-position: -154px -85px;
+  color: white; }
+
+.dialog .submit:hover {
+  background-position: -77px -85px; }
+
+.dialog .submit:active {
+  background-position: 0 -85px; }
+
+.feedbackLayer .titl, .feedbackLayer .title, .lyricSearch > div div p {
+  display: inline;
+  font-weight: 400; }
+
+.dialog .textInput, .feedbackLayer .contact, .feedbackLayer .view, .lyricSearch > div div input {
+  padding: 1px 0 0 3px;
+  border: 1px solid #c8c8c8;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1) inset;
+  font: 12px/1.5em "ËÎÌå";
+  color: #888888; }
+
+.dialog .textInput:hover, .feedbackLayer .view:focus, .feedbackLayer .contact:focus, .lyricSearch > div div input:focus {
+  border: 1px solid #a6a6a6;
+  color: #656565; }
+
+.feedbackLayer .contact, .lyricSearch > div div input {
+  height: 30px;
+  line-height: 30px \9;
+  padding: 0 10px; }
+
+.feedbackLayer .email, .lyricSearch .singername {
+  margin-top: 15px; }
+
+.feedbackLayer {
+  background: white; }
+
+.feedbackLayer .view {
+  height: 60px;
+  padding: 10px;
+  resize: none; }
+
+.feedbackLayer .contact, .feedbackLayer .view {
+  width: 310px;
+  vertical-align: top; }
+
+.feedbackLayer .errormsg {
+  height: 20px;
+  line-height: 20px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px; }
+
+.lyricSearch > div {
+  margin-top: 10px; }
+
+.lyricSearch .songname, .lyricSearch .singername {
+  margin-top: 30px; }
+
+.lyricSearch .singername {
+  margin-bottom: 20px; }
+
+.lyricSearch > div div input {
+  width: 150px;
+  margin: 0; }
+
+.lyricSearch > div div .errorTip {
+  outline: 1px solid red; }
+
+.picLyricError .content {
+  margin: 0 20px; }
+
+.picLyricError div p {
+  height: 30px;
+  line-height: 30px;
+  padding: 7px 0;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: left;
+  cursor: pointer; }
+
+.picLyricError div p > span:first-child {
+  width: 15px;
+  height: 100%;
+  margin-right: 5px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/iconList-1d9649.png) no-repeat 0 -1290px;
+  display: inline-block;
+  margin-bottom: -7px; }
+
+.picLyricError div p span.choice {
+  background-position: 0 -1340px; }
+
+.dialogConfirm p {
+  height: 72px; }
+
+#d-confirmBtn {
+  background-position: -154px 0;
+  color: white; }
+
+#d-confirmBtn:hover {
+  background-position: -77px 0; }
+
+#d-confirmBtn:active {
+  background-position: 0 0; }
+
+#d-cancelBtn {
+  background-position: -154px -34px; }
+
+#d-cancelBtn:hover {
+  background-position: -77px -34px; }
+
+#d-cancelBtn:active {
+  background-position: 0 -34px; }
+
+.songDownload {
+  left: 338px;
+  top: 200px;
+  text-align: left;
+  font-family: "ËÎÌå"; }
+
+.songDownload .text {
+  color: #3c3c3c; }
+
+.songDownload .singer {
+  margin: 0 10px;
+  padding: 5px 0 8px;
+  text-align: left;
+  border-bottom: 1px solid #E6E6E6;
+  font-weight: 700;
+  color: #505050; }
+
+.songDownload .ver {
+  text-align: left;
+  font-size: 14px;
+  color: #787878;
+  padding: 10px 0; }
+
+.songDownload .pz {
+  padding-left: 10px; }
+
+.songDownload .aac {
+  padding: 20px 0 0 52px; }
+
+.songDownload label {
+  padding: 7px 6px 5px;
+  cursor: pointer; }
+
+.songDownload label:hover, .songDownload .labelBorder {
+  border: 1px solid #E7E7E7;
+  padding: 6px 5px 4px; }
+
+.songDownload label span {
+  display: inline-block;
+  width: 111px;
+  color: #3c3c3c; }
+
+.songDownload .bzpz {
+  padding-left: 15px; }
+
+.songDownload .gpz {
+  padding-left: 15px; }
+
+.songDownload .submit {
+  margin: 25px auto 0;
+  display: block;
+  text-align: center;
+  line-height: 28px; }
+
+.songDownload .clientDown {
+  padding: 6px 10px;
+  border: 1px dashed #00A8FF;
+  margin: 20px 25px 0 50px; }
+
+.songDownload .clientDown i {
+  font-style: normal;
+  color: #cc0000; }
+
+.songDownload .clientDown a {
+  color: #2d64b3;
+  text-decoration: none; }
+
+.aboutLayer {
+  color: #333333; }
+
+.aboutLayer .content {
+  width: 100%;
+  padding-top: 25px; }
+
+.aboutLayer .footer {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  line-height: 30px;
+  color: #646464;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/copyrightBG-c0e6de.png) repeat-x left top; }
+
+#contextMenu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f0f0f0;
+  line-height: 24px;
+  box-shadow: 3px 3px 3px rgba(88, 88, 88, 0.5);
+  font-size: 12px;
+  font-family: 'ËÎÌå';
+  border-radius: 3px;
+  z-index: 9999; }
+
+#contextMenu .verticalRoate {
+  -moz-transform: rotate(90deg);
+  -moz-transform-origin: top left;
+  -webkit-transform: rotate(90deg);
+  -webkit-transform-origin: top left;
+  -o-transform: rotate(90deg);
+  -o-transform-origin: top left;
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); }
+
+#contextMenu .menuTip {
+  text-indent: .5em;
+  color: #969696;
+  margin-left: 24px; }
+
+#contextMenu .ieMenuTip {
+  margin-left: 0; }
+
+#contextMenu .menuContent {
+  width: 140px;
+  margin-left: 28px;
+  margin-top: -24px;
+  border-left: 1px solid #d7d7d7;
+  color: #282828; }
+
+#contextMenu .menuContent > p, #contextMenu .menuContent > div {
+  border-bottom: 1px solid #d7d7d7; }
+
+#contextMenu .menuContent > p:last-child {
+  border-bottom: 0; }
+
+#contextMenu .menuContent > div {
+  position: relative; }
+
+#contextMenu .menuContent > div .arrow {
+  display: block;
+  position: absolute;
+  top: 9px;
+  right: 5px;
+  width: 0;
+  height: 0;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #282828; }
+
+#contextMenu .menuContent > div ul {
+  display: none;
+  position: absolute;
+  right: -100px;
+  top: 0;
+  width: 100px;
+  padding: 1px 0;
+  background: #f5f5f5;
+  box-shadow: 2px 2px 2px rgba(88, 88, 88, 0.5);
+  border-radius: 3px; }
+
+#contextMenu .menuContent > div:hover ul {
+  display: block; }
+
+#contextMenu .menuContent > div .leftUL {
+  right: 140px; }
+
+#contextMenu .menuContent > div .topUL {
+  top: -29px; }
+
+#contextMenu .menuContent > div ul li {
+  position: relative; }
+
+#contextMenu .menuContent > div ul span {
+  display: none;
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center; }
+
+#contextMenu .menuContent > div ul .choosed, #contextMenu .menuContent > div ul li:hover span {
+  display: block;
+  top: 3px;
+  left: 3px;
+  background: #c1d7ee;
+  border: 1px solid #7ab1e9; }
+
+#contextMenu .menuContent > div ul a {
+  margin-left: 26px;
+  border-left: 1px solid #d7d7d7;
+  text-indent: 5px; }
+
+#contextMenu .menuContent a {
+  display: block;
+  color: #282828;
+  height: 28px;
+  line-height: 28px;
+  cursor: pointer; }
+
+#contextMenu .menuContent a span {
+  display: inline-block;
+  width: 134px;
+  height: 20px;
+  line-height: 20px;
+  margin-left: 3px;
+  text-indent: 2px; }
+
+#contextMenu .menuContent a span:hover {
+  background: #c1d7ee;
+  border: 1px solid #7ab1e9;
+  margin-left: 2px; }
+
+.ttxyBanner {
+  position: relative;
+  height: 173px;
+  overflow: hidden;
+  padding: 0 10px;
+  margin-bottom: 15px;
+  margin-right: 27px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/transparent-w10-27f179.png) repeat left top; }
+
+.ttxyBanner ul li {
+  float: left;
+  width: 136px;
+  height: 155px;
+  margin: 10px 0 0 30px; }
+
+.ttxyBanner ul li:hover .play {
+  display: block; }
+
+.ttxyBanner .original {
+  display: block;
+  position: relative;
+  font: 12px/18px "ËÎÌå", "Î¢ÈíÑÅºÚ", Arial; }
+
+.ttxyBanner .original span {
+  display: inline-block; }
+
+.ttxyBanner .original .headPic {
+  width: 128px;
+  height: 96px;
+  margin-bottom: 2px;
+  padding: 1px; }
+
+.ttxyBanner .original .zb {
+  position: absolute;
+  right: 6px;
+  top: 80px;
+  height: 18px;
+  line-height: 18px;
+  padding: 0 2px;
+  color: #FFF;
+  font-size: 12px;
+  text-align: center;
+  background: #532d92; }
+
+.ttxyBanner .original .play {
+  display: none;
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  width: 128px;
+  height: 78px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/play-ad14f8.png) no-repeat 0 0; }
+
+.ttxyBanner .original .weekStar {
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 38px;
+  height: 38px;
+  background: url(images/new/index/week-star.png?111) no-repeat right 0; }
+
+.ttxyBanner .original .num {
+  position: absolute;
+  left: 1px;
+  top: 79px;
+  width: 128px;
+  height: 18px;
+  line-height: 18px;
+  text-indent: 5px;
+  font-size: 12px;
+  background: url(http://app.ttdtweb.com/dongting/styles/images/000-60-908fb3.png) repeat 0 0;
+  color: white; }
+
+.ttxyBanner .original .starLV {
+  float: left;
+  margin: 3px 5px 0 0;
+  display: none; }
+
+.ttxyBanner .original .name {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin-top: 3px;
+  overflow: hidden;
+  color: #b1b1b1;
+  white-space: nowrap;
+  -ms-text-overflow: ellipsis;
+  text-overflow: ellipsis; }
+
+.ttxyBanner .original:hover .name {
+  text-decoration: underline; }
+
+.ttxyBanner .original .time {
+  margin-top: 1px;
+  clear: left;
+  font-size: 11px;
+  white-space: nowrap;
+  color: #fefefe; }
+
+.commonList li {
+  min-width: 380px; }
+
+.page-1024 .commonList li {
+  width: 95%; }
+
+.page-1440 .commonList li {
+  width: 44%; }
+
+.page-1024 .plaza .commonList li {
+  width: 47%; }
+
+.page-1440 .plaza .commonList li {
+  width: 47%; }
+
+.page-1920 .commonList li {
+  width: 30%; }
+
+@media screen and (max-width: 768px) {
+  #skinTool {
+    display: none; }
+
+  .plaza .select, .songListThree .info {
+    display: none; }
+
+  .commonList {
+    margin-left: 0;
+    padding-left: 5px; }
+
+  #main {
+    left: 320px; }
+
+  .singerTwo li {
+    width: 96%; }
+
+  .picList li {
+    width: 190px; }
+
+  .picList img, .radio img {
+    width: 170px;
+    height: 85px; } }
+@media screen and (max-width: 1020px) {
+  #skinTool {
+    display: none; } }
+.page-vip .player .handle {
+  width: 250px;
+  height: 20px;
+  padding: 12px 19px 21px 63px; }
+
+.page-vip .player .handle .download {
+  display: none; }
