@@ -1,0 +1,11 @@
+<a class="fix">
+    <span class="status"></span>
+                                    <span class="group">
+                                        <span class="song text-overflow" title="{{ ngModel.song_name}}">{{ ngModel.song_name}}</span>
+                                        <span class="singer text-overflow" title="{{ ngModel.singer_name}}">{{ ngModel.singer_name}}</span>
+                                        <span class="heartNum">{{ngModel.pick_count}}</span>
+                                    </span>
+    <!--<span data-songid="{{ngModel.song_id}}" class="add"></span>-->
+    <span class="showview {{ngModel.like==true?'redHeart':'heart'}}" data-songid="{{ngModel.song_id}}"></span>
+    <span class="download" title="{{ngModel.url_list[0].url}}"></span>
+</a>
